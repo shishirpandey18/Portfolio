@@ -1,8 +1,10 @@
 import React from 'react'
 import './Contact.css'
-import mail_icon from '../../assets/email.png'
-import location_icon from '../../assets/location.png'
+import mail_icon from '../../assets/mail.svg'
+import location_icon from '../../assets/location.gif'
 import theme_pattern from '../../assets/theme_pattern.svg'
+import linkedin from '../../assets/linkedin.svg'
+import github from '../../assets/github.svg'
 
 const Contact = () => {
 
@@ -48,8 +50,9 @@ const Contact = () => {
                     <div className="contact-detail">
                         <img src={location_icon} alt="" /><p>Belval, Luxembourg</p>
                     </div>
-                    <div className="contact-detail">
-                        <img src="" alt="" /><p></p>
+                    <div className="socialmedia">
+                    <a href="https://www.linkedin.com/in/shishirpandey180/" target="_blank" rel="noopener noreferrer"><img src={linkedin} alt="" /></a>
+                    <a href="https://github.com/shishirpandey18/" target="_blank" rel="noopener noreferrer"><img src={github} alt="" /></a>
                     </div>
                 </div>
             </div>

@@ -87,6 +87,11 @@
     font-family: Outfit;
     font-size: 20px;
 }
+.socialmedia{
+    margin: auto;
+    display: flex;
+    gap: 30px;
+}
 .contact-submit{
     border: none;
     color: white;
@@ -200,5 +205,9 @@
     .contact-submit{
         font-size: 10px;
         padding: 10px 30px;
+    }
+    .socialmedia img{
+        height: 30px;
+        align-items: start;
     }
 }
