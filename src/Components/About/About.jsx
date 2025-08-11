@@ -20,7 +20,7 @@ const About = () => {
                         <p>Currently, I'm diving deeper into the world of cybersecurity, exploring mobile app security and dynamic analysis. Whether it’s crafting intuitive UIs or uncovering vulnerabilities, I love learning and tackling new challenges.</p>
                     </div>
                     <div className="about-skills">
-                        <div className="about-skill"><p>C/C++ Programming</p><hr /></div>
+                        <div className="about-skill"><p>C/C++ </p><hr /></div>
                         <div className="about-skill"><p>HTML & CSS</p><hr /></div>
                         <div className="about-skill"><p>React JS</p><hr /></div>
                         <div className="about-skill"><p>JavaScript</p><hr /></div>
