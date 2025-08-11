@@ -1,7 +1,8 @@
-.about-skill:nth-child(1) hr { width: 40%; } /* C Programming */
+.about-skill:nth-child(1) hr { width: 40%; } /* C/C++ Programming */
 .about-skill:nth-child(2) hr { width: 60%; } /* HTML & CSS */
 .about-skill:nth-child(3) hr { width: 50%; } /* React JS */
 .about-skill:nth-child(4) hr { width: 60%; } /* JavaScript */
+.about-skill:nth-child(5) hr { width: 40%; } /* Python */
 .about{
     display: flex;
     flex-direction: column;
