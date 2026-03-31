@@ -16,7 +16,7 @@ const About = () => {
                 </div>
                 <div className="about-right">
                     <div className="about-para">
-                        <p>Hi, I'm Shishir Pandey — a tech enthusiast with a background in web development and a growing passion for cybersecurity. I enjoy building clean, user-friendly applications using modern tools like React, Node.js, and MongoDB. </p>
+                        <p>Hi, I'm Shishi Pandey — a tech enthusiast with a background in web development and a growing passion for cybersecurity. I enjoy building clean, user-friendly applications using modern tools like React, Node.js, and MongoDB. </p>
                         <p>Currently, I'm diving deeper into the world of cybersecurity, exploring mobile app security and dynamic analysis. Whether it’s crafting intuitive UIs or uncovering vulnerabilities, I love learning and tackling new challenges.</p>
                     </div>
                     <div className="about-skills">
