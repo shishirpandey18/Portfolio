@@ -11,13 +11,12 @@ const About = () => {
                 <img src={theme_pattern} alt="" />
             </div>
             <div className="about-sections">
-                <div className="about-left">
+                {/* <div className="about-left">
                     <img src={profile_img} alt="" />
-                </div>
+                </div> */}
                 <div className="about-right">
                     <div className="about-para">
                         <p>Hi, I'm Shishir Pandey — Computer Engineering graduate currently pursuing a Master’s degree in Cybersecurity and Cyber Defence, with a strong focus on data protection, privacy, Analysis, cybersecurity policy, and ethical implications of digital technologies. Experienced in security analysis and data-driven research, with academic training in EU digital sovereignty, cyber risk management, and privacy-aware system design.</p>
-                        <p>Currently, I'm diving deeper into the world of cybersecurity, exploring mobile app security and dynamic analysis. Whether it’s crafting intuitive UIs or uncovering vulnerabilities, I love learning and tackling new challenges.</p>
                     </div>
                     
                 </div>

@@ -4,7 +4,7 @@ import theme_pattern from '../../assets/theme_pattern.svg'
 import Education_Data from '../../assets/education_data'
 import arrow_icon from '../../assets/arrow_icon.svg'
 
-const education = () => {
+const Education = () => {
   return (
     <div id='education' className='education'>
       <div className="education-title">
@@ -36,7 +36,18 @@ const education = () => {
               <p>"Space Through Literature, Theatre, Cinema, and Other Arts"</p>
             )}
 
-            
+            {education.s_no === "03" && education.duration && (
+              <p className="work-duration">Tribhuvan University, Nepal</p>
+            )}
+            {education.s_no === "03" && education.duration && (
+              <p className="work-duration">Duration: {education.duration}</p>
+            )}
+            {education.s_no === "04" && education.duration && (
+              <p className="work-duration">Megatech Institute, Nepal</p>
+            )}
+            {education.s_no === "04" && education.duration && (
+              <p className="work-duration">Duration: {education.duration}</p>
+            )}
             
 
 
@@ -50,4 +61,4 @@ const education = () => {
   )
 }
 
-export default education
+export default Education
