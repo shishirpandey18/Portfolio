@@ -1,7 +1,7 @@
 import React from 'react'
 import './Education.css'
 import theme_pattern from '../../assets/theme_pattern.svg'
-import education_Data from '../../assets/education_data'
+import Education_Data from '../../assets/education_data'
 import arrow_icon from '../../assets/arrow_icon.svg'
 
 const education = () => {
@@ -12,7 +12,7 @@ const education = () => {
         <img src={theme_pattern} alt="" />
       </div>
       <div className="education-container">
-        {education_Data.map((education, index) => {
+        {Education_Data.map((education, index) => {
           return <div key={index} className="education-format">
             <h3>{education.s_no}</h3>
             <h2>{education.s_name}</h2>
