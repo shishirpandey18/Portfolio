@@ -1,16 +1,16 @@
 const Education_Data = [
     {
-        s_no:"01",
-        s_name:"Student Job (Collect, Analyse, Store Data) - SnT",
-        duration:"15/12/2024 – 15/03/2025",
+        s_name:"Master in Cybersecurity & Cyber Defence",
+        duration:"Sep 2024 — Expected Aug 2026",
     },
     {
-        s_no:"02",
-        s_name:"Music Recommendation System Based on Emotion Recognition using CNN",
+        s_name:"Winter School 2025",
+        duration:"December 2025",
+
     },
     {
-        s_no:"03",
-        s_name:"Nepal Expedition",
+        s_name:"Bachelor in Computer Engineering",
+        duration:"2018 — 2023",
     },
     
 ]
