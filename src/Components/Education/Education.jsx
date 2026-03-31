@@ -14,7 +14,7 @@ const education = () => {
       <div className="education-container">
         {Education_Data.map((education, index) => {
           return <div key={index} className="education-format">
-            <h3>{education.s_no}</h3>
+            {/* <h3>{education.s_no}</h3> */}
             <h2>{education.s_name}</h2>
             {education.s_no === "01" && education.duration && (
               <p className="work-duration">University of Luxembourg</p>
@@ -23,30 +23,20 @@ const education = () => {
               <p className="work-duration">Duration: {education.duration}</p>
             )}
             {education.s_no === "01" && (
-              <ul>
-                <li>Analysis on Android Application Using VUSC</li>
-                <li>VUSC (Vulnerability Scanner) is dynamic analysis environment</li>
-                <li>Execute ADB commands for app debugging</li>
-                <li>Manual Interaction with Applications</li>
-                <li>Document findings and provided detailed report</li>
-
-              </ul>
+              <p>Thesis: "Design, Implementation, and Empirical Evaluation of a Gamified Behavioral Intervention Framework for Cyberbullying Risk Prevention among Adolescents"</p>
+            )}
+            
+            {education.s_no === "02" && education.duration && (
+              <p className="work-duration">University of Rome Tor Vergata</p>
+            )}
+            {education.s_no === "02" && education.duration && (
+              <p className="work-duration">Duration: {education.duration}</p>
             )}
             {education.s_no === "02" && (
-              <ul>
-                <li>Developed intuitive frontend interface for the music player</li>
-                <li>Technologies Used: HTML, CSS, JS, React</li>
-
-              </ul>
+              <p>"Space Through Literature, Theatre, Cinema, and Other Arts"</p>
             )}
-            {education.s_no === "03" && (
-              <ul>
-                <li>Developed a system for tourist to view and book diﬀerent packages</li>
-                <li>Created form using formik with Yup validation for Authentication.</li>
-                <li>Technologies Used: HTML, CSS, JS, React, Formik, Yup</li>
 
-              </ul>
-            )}
+            
             
 
 

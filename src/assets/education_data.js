@@ -15,6 +15,11 @@ const Education_Data = [
         s_name:"Bachelor in Computer Engineering",
         duration:"2018 — 2023",
     },
+    {
+        s_no:"04",
+        s_name:"Professional Diploma in Computer Application",
+        duration:"2014 — 2015",
+    },
     
 ]
  
