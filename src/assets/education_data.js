@@ -15,4 +15,4 @@ const Education_Data = [
     
 ]
  
-export default MyWork_Data;
+export default Education_Data;
