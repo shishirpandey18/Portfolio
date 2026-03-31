@@ -8,7 +8,7 @@ const education = () => {
   return (
     <div id='education' className='education'>
       <div className="education-title">
-        <h1>My Work & Project</h1>
+        <h1>Education</h1>
         <img src={theme_pattern} alt="" />
       </div>
       <div className="education-container">
