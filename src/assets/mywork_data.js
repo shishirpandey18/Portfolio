@@ -1,7 +1,7 @@
 const MyWork_Data = [
     {
         s_no:"01",
-        s_name:"Student Job (Collect, Analyse, Store Data) - SnT",
+        s_name:"Research Assitant (Collect, Analyse, Store Data) - SnT",
         duration:"15/12/2024 – 15/03/2025",
     },
     {
