@@ -1,9 +1,17 @@
 name: Deploy to shishir.nepeu.eu (cPanel)
 
+# On every push to main:
+#  1. build the site
+#  2. publish the built files (+ .cpanel.yml) to the `deploy` branch
+#  3. ask cPanel to pull the `deploy` branch and run .cpanel.yml
+
 on:
   push:
     branches: [main]
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 concurrency:
   group: deploy
@@ -20,16 +28,32 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
+      - run: cp .cpanel.yml dist/
 
-      # Uploads the built site (dist/) to the cPanel folder for shishir.nepeu.eu.
-      # Credentials come from the repo's Actions secrets: FTP_SERVER, FTP_USERNAME, FTP_PASSWORD
-      - name: Upload to cPanel via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - name: Publish built site to the deploy branch
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftp
-          log-level: verbose
-          local-dir: ./dist/
-          server-dir: ./
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: deploy
+          publish_dir: ./dist
+          commit_message: "Deploy ${{ github.sha }}"
+
+      - name: Tell cPanel to pull and deploy
+        env:
+          CPANEL_HOST: ${{ secrets.CPANEL_HOST }}
+          CPANEL_USER: ${{ secrets.CPANEL_USER }}
+          CPANEL_TOKEN: ${{ secrets.CPANEL_TOKEN }}
+          REPO_ROOT: /home/nepeueu/repositories/portfolio
+        run: |
+          if [ -z "$CPANEL_TOKEN" ]; then
+            echo "::warning::cPanel secrets not set yet; deploy branch updated, skipping cPanel step."
+            exit 0
+          fi
+          api() {
+            out=$(curl -sS --fail -H "Authorization: cpanel ${CPANEL_USER}:${CPANEL_TOKEN}" \
+              "https://${CPANEL_HOST}:2083/execute/$1")
+            echo "$out" | head -c 600; echo
+            echo "$out" | grep -q '"status":1' || { echo "::error::cPanel call $1 failed"; exit 1; }
+          }
+          api "VersionControl/update?repository_root=${REPO_ROOT}&branch=deploy"
+          api "VersionControlDeployment/create?repository_root=${REPO_ROOT}"
