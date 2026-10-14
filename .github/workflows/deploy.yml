@@ -50,10 +50,14 @@ jobs:
             exit 0
           fi
           api() {
-            out=$(curl -sS --fail -H "Authorization: cpanel ${CPANEL_USER}:${CPANEL_TOKEN}" \
-              "https://${CPANEL_HOST}:2083/execute/$1")
-            echo "$out" | head -c 600; echo
-            echo "$out" | grep -q '"status":1' || { echo "::error::cPanel call $1 failed"; exit 1; }
+            out=$(curl -sS -w '\nHTTP %{http_code}' -H "Authorization: cpanel ${CPANEL_USER}:${CPANEL_TOKEN}" \
+              "https://${CPANEL_HOST}:2083/execute/$1" 2>&1)
+            echo "$out" | head -c 800; echo
+            if ! echo "$out" | grep -q '"status":1'; then
+              msg=$(echo "$out" | tr '\n' ' ' | head -c 500)
+              echo "::error::cPanel $1 -> $msg"
+              exit 1
+            fi
           }
           api "VersionControl/update?repository_root=${REPO_ROOT}&branch=deploy"
           api "VersionControlDeployment/create?repository_root=${REPO_ROOT}"
