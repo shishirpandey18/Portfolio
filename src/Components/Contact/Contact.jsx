@@ -40,18 +40,24 @@ const Contact = () => {
         <div className="contact-section">
             <div className="contact-left">
                 <h1>Let's Talk</h1>
-                <p>I'm just getting started, so if you have advice, opportunities, or just want to chat about tech, feel free to reach out!</p>
+                <p>I'm looking for entry-level opportunities in IT support, systems or cybersecurity. If you have an opportunity, advice, or just want to chat about tech, feel free to reach out!</p>
                 <div className="contact-details">
                     <div className="contact-detail">
-                        <img src={mail_icon} alt="" /><p>shishirpandey180@gmail.com</p>
+                        <img src={mail_icon} alt="" /><p><a className="contact-link" href="mailto:shishirpandey180@gmail.com">shishirpandey180@gmail.com</a></p>
 
 
                     </div>
                     <div className="contact-detail">
-                        <img src={location_icon} alt="" /><p>Belval, Luxembourg</p>
+                        <img src={location_icon} alt="" /><p>Luxembourg</p>
+                    </div>
+                    <div className="contact-detail">
+                        <p>🌐 <a className="contact-link" href="https://shishir.nepeu.eu/" target="_blank" rel="noopener noreferrer">shishir.nepeu.eu</a></p>
+                    </div>
+                    <div className="contact-detail">
+                        <p>✍️ <a className="contact-link" href="https://blog.nepeu.eu/" target="_blank" rel="noopener noreferrer">blog.nepeu.eu</a></p>
                     </div>
                     <div className="socialmedia">
-                    <a href="https://www.linkedin.com/in/shishirpandey180/" target="_blank" rel="noopener noreferrer"><img src={linkedin} alt="" /></a>
+                    <a href="https://www.linkedin.com/in/pshishir/" target="_blank" rel="noopener noreferrer"><img src={linkedin} alt="" /></a>
                     <a href="https://github.com/shishirpandey18/" target="_blank" rel="noopener noreferrer"><img src={github} alt="" /></a>
                     </div>
                 </div>

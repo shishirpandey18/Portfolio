@@ -28,6 +28,7 @@ const Navbar = () => {
             <li><AnchorLink className='anchor-link' offset={50} href='#skills'><p onClick={()=>{setMenu("skills"); closeMenu();}}>Skills</p></AnchorLink>{menu==="skills"?<img src={underline} alt='' />:<></>}</li>
             <li><AnchorLink className='anchor-link' offset={50} href='#awards'><p onClick={()=>{setMenu("awards"); closeMenu();}}>Awards</p></AnchorLink>{menu==="awards"?<img src={underline} alt='' />:<></>}</li>
             <li><AnchorLink className='anchor-link' offset={50} href='#contact'><p onClick={()=>{setMenu("contact"); closeMenu();}}>Contact</p></AnchorLink>{menu==="contact"?<img src={underline} alt='' />:<></>}</li>
+            <li><a className='anchor-link' href='https://blog.nepeu.eu/' target='_blank' rel='noopener noreferrer'><p onClick={closeMenu}>Blog ↗</p></a></li>
         </ul>
         <div className="nav-connect"><AnchorLink className='anchor-link' offset={50} href='#contact'>Connect With Me</AnchorLink></div>
 

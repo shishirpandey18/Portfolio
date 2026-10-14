@@ -1,7 +1,25 @@
 import React from 'react'
 import './Skills.css'
-import theme_pattern from '../../assets/theme_pattern.svg' 
-import arrow_icon from '../../assets/arrow_icon.svg'
+import theme_pattern from '../../assets/theme_pattern.svg'
+
+const Skills_Data = [
+  {
+    heading: 'Systems & Networking',
+    items: ['Linux', 'Docker', 'Git & GitHub', 'TCP/IP & Networking', 'Wireshark / tcpdump', 'ADB'],
+  },
+  {
+    heading: 'Programming & Data',
+    items: ['Python', 'C / C++', 'SQL, PostgreSQL', 'JavaScript, HTML, CSS', 'React'],
+  },
+  {
+    heading: 'AI, Security & Regulation',
+    items: ['Adversarial ML (evasion, poisoning)', 'Jupyter, Google Colab', 'NIS2, GDPR, DORA, ISO 27001', 'Figma'],
+  },
+  {
+    heading: 'Languages',
+    items: ['Nepali – Native', 'English – C1 (IELTS 7)', 'French – Intermediate', 'Hindi – Intermediate'],
+  },
+]
 
 const Skills = () => {
   return (
@@ -11,56 +29,15 @@ const Skills = () => {
         <img src={theme_pattern} alt="" />
       </div>
       <div className="skills-container">
-        <div  className="skills-format">
-            <h2>Technical</h2>
+        {Skills_Data.map((group) => (
+          <div key={group.heading} className="skills-format">
+            <h2>{group.heading}</h2>
             <ul>
-                <li>Python</li>
-                <li>C / C++</li>
-                <li>Linux</li>
-                <li>TCP/IP & Networking</li>
-                <li>Wireshark / tcpdump</li>
-                <li>Android App Analysis (ADB)</li>
-                <li>Vulnerability Scanning</li>
-                <li>MS Office Suite</li>
+              {group.items.map((s) => <li key={s}>{s}</li>)}
             </ul>
-        </div>
-        <div  className="skills-format">
-            <h2>Web & Dev</h2>
-            <ul>
-                <li>HTML / CSS</li>
-                <li>JavaScript</li>
-                <li>React (Hooks, Router)</li>
-                <li>Formik & Yup</li>
-                <li>MERN Stack</li>
-            </ul>
-        </div>
-        <div  className="skills-format">
-            <h2>Security & Policy</h2>
-            <ul>
-                <li>Cyber Risk Management</li>
-                <li>GDPR / NIS2 / DORA</li>
-                <li>ISO 27001</li>
-                <li>Privacy-aware Design</li>
-                <li>Threat Intelligence</li>
-                <li>Digital Forensics</li>
-                <li>EU Digital Sovereignty</li>
-            </ul>
-        </div>
-        <div className="skills-format">
-            <h2>Relevant Coursework</h2>
-            <ul className="small-text">
-                <li>Cybersecurity Ethics – ethical decision-making, privacy, societal impact of digital technologies</li>
-                <li>Cyber Policy – national and EU-level cybersecurity and data governance frameworks like GDPR, NIS2, DORA</li>
-                <li>Cybersecurity Risk Management – risk assessment, mitigation strategies, compliance-oriented security, ISO 27001</li>
-                <li>EU Digital Sovereignty – EU data strategy, digital sovereignty, secure data sharing through research & innovation</li>
-                <li>Entrepreneurship (Cybersecurity context) – innovation in regulated and public-sector environments</li>
-                <li>Threat Intelligence & Digital Forensics – legal and ethical considerations in cyber investigations</li>
-            </ul>
-        </div>
-        
-
+          </div>
+        ))}
       </div>
-
     </div>
   )
 }

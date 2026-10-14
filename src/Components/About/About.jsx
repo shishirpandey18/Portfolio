@@ -1,6 +1,5 @@
 import React from 'react'
 import './About.css'
-import profile_img from '../../assets/profile_img1.jpeg'
 import theme_pattern from '../../assets/theme_pattern.svg'
 
 const About = () => {
@@ -11,14 +10,11 @@ const About = () => {
                 <img src={theme_pattern} alt="" />
             </div>
             <div className="about-sections">
-                {/* <div className="about-left">
-                    <img src={profile_img} alt="" />
-                </div> */}
                 <div className="about-right">
                     <div className="about-para">
-                        <p>Hi, I'm Shishir Pandey — Computer Engineering graduate currently pursuing a Master’s degree in Cybersecurity and Cyber Defence, with a strong focus on data protection, privacy, Analysis, cybersecurity policy, and ethical implications of digital technologies. Experienced in security analysis and data-driven research, with academic training in EU digital sovereignty, cyber risk management, and privacy-aware system design.</p>
+                        <p>Hi, I'm Shishir Pandey — a recent graduate of the Master in Cybersecurity and Cyber Defence at the University of Luxembourg, with a Bachelor's in Computer Engineering. I'm a curious and hands-on person who enjoys solving problems, learning independently and understanding how things work.</p>
+                        <p>I value teamwork, clear communication and being someone others can rely on. I adapt quickly to new environments, take initiative when faced with challenges and enjoy explaining things in a simple, practical way. I'm looking for an entry-level opportunity in IT support, systems or cybersecurity where I can keep learning, contribute to the team and grow professionally.</p>
                     </div>
-                    
                 </div>
             </div>
         </div>

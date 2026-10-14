@@ -8,7 +8,7 @@ const Hero = () => {
         const handleDownloadResume = () => {
           const link = document.createElement('a');
           link.href = resume;
-          link.download = 'Shishir-Pandey-Resume.pdf';
+          link.download = 'Shishir-Pandey-CV.pdf';
           document.body.appendChild(link);
           link.click();
           document.body.removeChild(link);
@@ -16,8 +16,8 @@ const Hero = () => {
   return (
     <div id='home' className='hero'>
         <img src={profile_img} alt=''/>
-        <h1><span>I'm Shishir Pandey,</span> student of Master in Cybersecurity and Cyber Defence at University of Luxembourg.</h1>
-        <p>Beginner in cybersecurity with a background in computer engineering and basic knowledge of web development and security concepts.</p>
+        <h1><span>I'm Shishir Pandey,</span> a cybersecurity graduate from the University of Luxembourg.</h1>
+        <p>Master in Cybersecurity and Cyber Defence, Bachelor's in Computer Engineering. Looking for an entry-level role in IT support, systems or cybersecurity.</p>
         <div className="hero-action">
             <div className="hero-connect"><AnchorLink className='anchor-link' offset={50} href='#contact'>Connect With Me</AnchorLink></div>
             <div className="hero-resume" onClick={handleDownloadResume}>My resume</div>
