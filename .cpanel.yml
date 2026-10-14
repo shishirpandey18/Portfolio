@@ -1,0 +1,7 @@
+# Used by cPanel Git Version Control (branch: deploy).
+# Copies the built site into the shishir.nepeu.eu document root.
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/nepeueu/shishir.nepeu.eu/
+    - /bin/rm -rf ${DEPLOYPATH}assets
+    - /bin/cp -R index.html Favicon.png assets ${DEPLOYPATH}
