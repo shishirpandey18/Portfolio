@@ -4,7 +4,7 @@ const Education_Data = [
         org: "University of Luxembourg",
         duration: "Sep 2024 – Sep 2026",
         bullets: [
-            "Master's Thesis: designed, built and evaluated a game-based learning tool that helps teenagers recognise and respond to cyberbullying — from concept to a working, tested solution. Successfully defended on 28 August 2026.",
+            "Master's Thesis: designed, built and evaluated a game-based learning tool that helps teenagers recognize and respond to cyberbullying — from concept to a working, tested solution. Successfully defended on 28 August 2026.",
             "Relevant coursework: Generative AI and Cybersecurity; AI and Cybersecurity; Open Network Security; Database Security; Cybersecurity Risk Management; Threat Intelligence & Digital Forensics.",
         ],
     },
