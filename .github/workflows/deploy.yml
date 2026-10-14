@@ -1,9 +1,8 @@
 name: Deploy to shishir.nepeu.eu (cPanel)
 
-# On every push to main:
-#  1. build the site
-#  2. publish the built files (+ .cpanel.yml) to the `deploy` branch
-#  3. ask cPanel to pull the `deploy` branch and run .cpanel.yml
+# On every push to main: build the site and publish the built files
+# (+ .cpanel.yml) to the `deploy` branch.
+# The cPanel server picks up the `deploy` branch itself via a cron job.
 
 on:
   push:
@@ -37,27 +36,3 @@ jobs:
           publish_branch: deploy
           publish_dir: ./dist
           commit_message: "Deploy ${{ github.sha }}"
-
-      - name: Tell cPanel to pull and deploy
-        env:
-          CPANEL_HOST: ${{ secrets.CPANEL_HOST }}
-          CPANEL_USER: ${{ secrets.CPANEL_USER }}
-          CPANEL_TOKEN: ${{ secrets.CPANEL_TOKEN }}
-          REPO_ROOT: /home/nepeueu/repositories/portfolio
-        run: |
-          if [ -z "$CPANEL_TOKEN" ]; then
-            echo "::warning::cPanel secrets not set yet; deploy branch updated, skipping cPanel step."
-            exit 0
-          fi
-          api() {
-            out=$(curl -sS -w '\nHTTP %{http_code}' -H "Authorization: cpanel ${CPANEL_USER}:${CPANEL_TOKEN}" \
-              "https://${CPANEL_HOST}:2083/execute/$1" 2>&1)
-            echo "$out" | head -c 800; echo
-            if ! echo "$out" | grep -q '"status":1'; then
-              msg=$(echo "$out" | tr '\n' ' ' | head -c 500)
-              echo "::error::cPanel $1 -> $msg"
-              exit 1
-            fi
-          }
-          api "VersionControl/update?repository_root=${REPO_ROOT}&branch=deploy"
-          api "VersionControlDeployment/create?repository_root=${REPO_ROOT}"
